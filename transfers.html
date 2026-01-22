@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Transfers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #f2f2f2; }
+    input { width: 100%; border: none; text-align: center; }
+    button { margin-top: 15px; width: 100%; padding: 10px; font-size: 16px; }
+  </style>
+</head>
+
+<body>
+
+<a href="daily.html">← Back</a>
+
+<h2>📄 Transfers</h2>
+<p>Record items transferred between departments.</p>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Item</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Qty</th>
+  </tr>
+  <tr>
+    <td><input id="t_date1"></td>
+    <td><input id="t_item1"></td>
+    <td><input id="t_from1"></td>
+    <td><input id="t_to1"></td>
+    <td><input id="t_qty1"></td>
+  </tr>
+</table>
+
+<button onclick="save()">Save</button>
+
+<script>
+function save() {
+  localStorage.setItem("t_date1", t_date1.value);
+  localStorage.setItem("t_item1", t_item1.value);
+  localStorage.setItem("t_from1", t_from1.value);
+  localStorage.setItem("t_to1", t_to1.value);
+  localStorage.setItem("t_qty1", t_qty1.value);
+  alert("Saved");
+}
+
+t_date1.value = localStorage.getItem("t_date1") || "";
+t_item1.value = localStorage.getItem("t_item1") || "";
+t_from1.value = localStorage.getItem("t_from1") || "";
+t_to1.value   = localStorage.getItem("t_to1") || "";
+t_qty1.value  = localStorage.getItem("t_qty1") || "";
+</script>
+
+</body>
+</html>
