@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI Schedule Suggestion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 15px 0;
+    }
+    .card {
+      background: #f2f2f2;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .note {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="owner.html">← Back</a>
+
+<h2>🤖 AI Schedule Suggestion (Demo)</h2>
+
+<p class="note">
+AI generates a suggested weekly schedule based on staffing rules.
+Final approval is always done by management.
+</p>
+
+<button onclick="runAI()">Generate Schedule Suggestion</button>
+
+<div id="result"></div>
+
+<script>
+function runAI() {
+  document.getElementById("result").innerHTML = `
+    <div class="card">
+      <div class="title">🍳 Kitchen – Suggested Schedule</div>
+      <p>
+        Mon: A, B<br>
+        Tue: B, C<br>
+        Wed: A, D<br>
+        Thu: B, D<br>
+        Fri: A, B, D<br>
+        Sat: B, C, D<br>
+        Sun: A, C
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="title">📋 Rules Applied</div>
+      <p>
+        • Minimum 2 staff per day<br>
+        • D works at least 3 days per week<br>
+        • When only 2 staff, D must work with B<br>
+        • Each staff has 2 days off
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="title">🧠 AI Notes</div>
+      <p>
+        Friday and Saturday are fully staffed due to higher workload.
+        No conflicts detected with current rules.
+      </p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
