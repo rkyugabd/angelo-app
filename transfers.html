@@ -7,7 +7,7 @@
   <style>
     body { font-family: Arial; padding: 20px; }
     table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
     th { background: #f2f2f2; }
     input { width: 100%; border: none; text-align: center; }
     button { margin-top: 15px; width: 100%; padding: 10px; font-size: 16px; }
@@ -19,7 +19,6 @@
 <a href="daily.html">← Back</a>
 
 <h2>📄 Transfers</h2>
-<p>Record items transferred between departments.</p>
 
 <table>
   <tr>
@@ -29,32 +28,43 @@
     <th>To</th>
     <th>Qty</th>
   </tr>
-  <tr>
-    <td><input id="t_date1"></td>
-    <td><input id="t_item1"></td>
-    <td><input id="t_from1"></td>
-    <td><input id="t_to1"></td>
-    <td><input id="t_qty1"></td>
-  </tr>
+
+  <script>
+    for(let i=1;i<=20;i++){
+      document.write(`
+        <tr>
+          <td><input id="t_date${i}"></td>
+          <td><input id="t_item${i}"></td>
+          <td><input id="t_from${i}"></td>
+          <td><input id="t_to${i}"></td>
+          <td><input id="t_qty${i}"></td>
+        </tr>
+      `);
+    }
+  </script>
 </table>
 
 <button onclick="save()">Save</button>
 
 <script>
-function save() {
-  localStorage.setItem("t_date1", t_date1.value);
-  localStorage.setItem("t_item1", t_item1.value);
-  localStorage.setItem("t_from1", t_from1.value);
-  localStorage.setItem("t_to1", t_to1.value);
-  localStorage.setItem("t_qty1", t_qty1.value);
+function save(){
+  for(let i=1;i<=20;i++){
+    localStorage.setItem("t_date"+i, document.getElementById("t_date"+i).value);
+    localStorage.setItem("t_item"+i, document.getElementById("t_item"+i).value);
+    localStorage.setItem("t_from"+i, document.getElementById("t_from"+i).value);
+    localStorage.setItem("t_to"+i,   document.getElementById("t_to"+i).value);
+    localStorage.setItem("t_qty"+i,  document.getElementById("t_qty"+i).value);
+  }
   alert("Saved");
 }
 
-t_date1.value = localStorage.getItem("t_date1") || "";
-t_item1.value = localStorage.getItem("t_item1") || "";
-t_from1.value = localStorage.getItem("t_from1") || "";
-t_to1.value   = localStorage.getItem("t_to1") || "";
-t_qty1.value  = localStorage.getItem("t_qty1") || "";
+for(let i=1;i<=20;i++){
+  document.getElementById("t_date"+i).value = localStorage.getItem("t_date"+i) || "";
+  document.getElementById("t_item"+i).value = localStorage.getItem("t_item"+i) || "";
+  document.getElementById("t_from"+i).value = localStorage.getItem("t_from"+i) || "";
+  document.getElementById("t_to"+i).value   = localStorage.getItem("t_to"+i) || "";
+  document.getElementById("t_qty"+i).value  = localStorage.getItem("t_qty"+i) || "";
+}
 </script>
 
 </body>
