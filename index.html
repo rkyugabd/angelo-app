@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <title>Anglo Restaurant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="apple-touch-icon" href="icon.png">
-<link rel="icon" href="icon.png">
+
+  <!-- App Icon -->
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="icon.png">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,14 +18,20 @@
     }
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
-    .card {
+    a.card {
+      display: block;
       background: white;
       padding: 18px;
       margin-bottom: 15px;
       border-radius: 12px;
       font-size: 18px;
+      color: black;
+      text-decoration: none;
+    }
+    a.card:active {
+      background: #e0e0e0;
     }
   </style>
 </head>
@@ -31,14 +40,14 @@
 
   <h1>🍝 Anglo Restaurant</h1>
 
-  <div class="card">📝 Daily Records</div>
-  <div class="card">📘 Menu & Recipes</div>
-  <div class="card">🛵 Delivery Orders</div>
-  <div class="card">🎓 Staff Training</div>
-  <div class="card">🤖 AI Q&A</div>
+  <a href="daily.html" class="card">📝 Daily Records</a>
+  <a href="menu.html" class="card">📘 Menu & Recipes</a>
+  <a href="delivery.html" class="card">🛵 Delivery Orders</a>
+  <a href="training.html" class="card">🎓 Staff Training</a>
+  <a href="ai.html" class="card">🤖 AI Q&A</a>
 
-  <div class="card">🔒 Owner Login</div>
-  <div class="card">💰 Finance Login</div>
+  <a href="owner.html" class="card">🔒 Owner Login</a>
+  <a href="finance.html" class="card">💰 Finance Login</a>
 
 </body>
 </html>
