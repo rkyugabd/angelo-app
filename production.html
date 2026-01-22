@@ -7,7 +7,7 @@
   <style>
     body { font-family: Arial; padding: 20px; }
     table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
     th { background: #f2f2f2; }
     input { width: 100%; border: none; text-align: center; }
     button { margin-top: 15px; width: 100%; padding: 10px; font-size: 16px; }
@@ -19,7 +19,6 @@
 <a href="daily.html">← Back</a>
 
 <h2>📄 Daily Production</h2>
-<p>Record what was produced today.</p>
 
 <table>
   <tr>
@@ -27,40 +26,37 @@
     <th>Dish</th>
     <th>Quantity</th>
   </tr>
-  <tr>
-    <td><input id="p_date1"></td>
-    <td><input id="p_item1"></td>
-    <td><input id="p_qty1"></td>
-  </tr>
-  <tr>
-    <td><input id="p_date2"></td>
-    <td><input id="p_item2"></td>
-    <td><input id="p_qty2"></td>
-  </tr>
+
+  <script>
+    for(let i=1;i<=20;i++){
+      document.write(`
+        <tr>
+          <td><input id="p_date${i}"></td>
+          <td><input id="p_item${i}"></td>
+          <td><input id="p_qty${i}"></td>
+        </tr>
+      `);
+    }
+  </script>
 </table>
 
 <button onclick="save()">Save</button>
 
 <script>
-function save() {
-  localStorage.setItem("p_date1", p_date1.value);
-  localStorage.setItem("p_item1", p_item1.value);
-  localStorage.setItem("p_qty1", p_qty1.value);
-
-  localStorage.setItem("p_date2", p_date2.value);
-  localStorage.setItem("p_item2", p_item2.value);
-  localStorage.setItem("p_qty2", p_qty2.value);
-
+function save(){
+  for(let i=1;i<=20;i++){
+    localStorage.setItem("p_date"+i, document.getElementById("p_date"+i).value);
+    localStorage.setItem("p_item"+i, document.getElementById("p_item"+i).value);
+    localStorage.setItem("p_qty"+i,  document.getElementById("p_qty"+i).value);
+  }
   alert("Saved");
 }
 
-p_date1.value = localStorage.getItem("p_date1") || "";
-p_item1.value = localStorage.getItem("p_item1") || "";
-p_qty1.value  = localStorage.getItem("p_qty1") || "";
-
-p_date2.value = localStorage.getItem("p_date2") || "";
-p_item2.value = localStorage.getItem("p_item2") || "";
-p_qty2.value  = localStorage.getItem("p_qty2") || "";
+for(let i=1;i<=20;i++){
+  document.getElementById("p_date"+i).value = localStorage.getItem("p_date"+i) || "";
+  document.getElementById("p_item"+i).value = localStorage.getItem("p_item"+i) || "";
+  document.getElementById("p_qty"+i).value  = localStorage.getItem("p_qty"+i) || "";
+}
 </script>
 
 </body>
