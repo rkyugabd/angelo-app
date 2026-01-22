@@ -6,18 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: Arial;
-      margin: 0;
-      padding: 10px;
+      font-family: Arial, sans-serif;
+      padding: 20px;
     }
-    a {
+    .card {
       display: block;
-      margin-bottom: 10px;
+      padding: 15px;
+      margin-bottom: 12px;
+      background: #f2f2f2;
+      text-decoration: none;
+      color: #000;
+      border-radius: 8px;
+      font-size: 16px;
     }
-    iframe {
-      width: 100%;
-      height: 85vh;
-      border: none;
+    .card:hover {
+      background: #e0e0e0;
     }
   </style>
 </head>
@@ -27,13 +30,22 @@
 <a href="index.html">← Back</a>
 
 <h2>📝 Daily Records</h2>
+<p>Select a form to fill in:</p>
 
-<p>Staff fill daily usage and production records below.</p>
+<a class="card" target="_blank"
+   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/htmlview#gid=0">
+📄 Ingredients Usage
+</a>
 
-<!-- ✅ Stable Google Sheet Embed -->
-<iframe 
-  src="https://docs.google.com/spreadsheets/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/preview">
-</iframe>
+<a class="card" target="_blank"
+   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/htmlview#gid=1050399207">
+📄 Daily Production
+</a>
+
+<a class="card" target="_blank"
+   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/htmlview#gid=731294102">
+📄 Transfers
+</a>
 
 </body>
 </html>
