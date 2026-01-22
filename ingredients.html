@@ -5,34 +5,12 @@
   <title>Ingredients Usage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background: #f2f2f2;
-    }
-    input {
-      width: 100%;
-      border: none;
-      text-align: center;
-      font-size: 14px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px;
-      width: 100%;
-      font-size: 16px;
-    }
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    th { background: #f2f2f2; }
+    input { width: 100%; border: none; text-align: center; }
+    button { margin-top: 15px; width: 100%; padding: 10px; font-size: 16px; }
   </style>
 </head>
 
@@ -41,64 +19,45 @@
 <a href="daily.html">← Back</a>
 
 <h2>📄 Ingredients Usage</h2>
-<p>Fill in daily ingredient usage.</p>
 
 <table>
   <tr>
     <th>Date</th>
-    <th>Item</th>
-    <th>Quantity</th>
+    <th>Ingredient</th>
+    <th>Qty Used</th>
   </tr>
 
-  <tr>
-    <td><input id="date1"></td>
-    <td><input id="item1"></td>
-    <td><input id="qty1"></td>
-  </tr>
-
-  <tr>
-    <td><input id="date2"></td>
-    <td><input id="item2"></td>
-    <td><input id="qty2"></td>
-  </tr>
-
-  <tr>
-    <td><input id="date3"></td>
-    <td><input id="item3"></td>
-    <td><input id="qty3"></td>
-  </tr>
+  <!-- 20 rows -->
+  <script>
+    for(let i=1;i<=20;i++){
+      document.write(`
+        <tr>
+          <td><input id="date${i}"></td>
+          <td><input id="item${i}"></td>
+          <td><input id="qty${i}"></td>
+        </tr>
+      `);
+    }
+  </script>
 </table>
 
-<button onclick="saveData()">Save</button>
+<button onclick="save()">Save</button>
 
 <script>
-  function saveData() {
-    localStorage.setItem("date1", date1.value);
-    localStorage.setItem("item1", item1.value);
-    localStorage.setItem("qty1", qty1.value);
-
-    localStorage.setItem("date2", date2.value);
-    localStorage.setItem("item2", item2.value);
-    localStorage.setItem("qty2", qty2.value);
-
-    localStorage.setItem("date3", date3.value);
-    localStorage.setItem("item3", item3.value);
-    localStorage.setItem("qty3", qty3.value);
-
-    alert("Saved");
+function save(){
+  for(let i=1;i<=20;i++){
+    localStorage.setItem("date"+i, date[i].value);
+    localStorage.setItem("item"+i, item[i].value);
+    localStorage.setItem("qty"+i, qty[i].value);
   }
+  alert("Saved");
+}
 
-  date1.value = localStorage.getItem("date1") || "";
-  item1.value = localStorage.getItem("item1") || "";
-  qty1.value  = localStorage.getItem("qty1") || "";
-
-  date2.value = localStorage.getItem("date2") || "";
-  item2.value = localStorage.getItem("item2") || "";
-  qty2.value  = localStorage.getItem("qty2") || "";
-
-  date3.value = localStorage.getItem("date3") || "";
-  item3.value = localStorage.getItem("item3") || "";
-  qty3.value  = localStorage.getItem("qty3") || "";
+for(let i=1;i<=20;i++){
+  date[i].value = localStorage.getItem("date"+i) || "";
+  item[i].value = localStorage.getItem("item"+i) || "";
+  qty[i].value  = localStorage.getItem("qty"+i) || "";
+}
 </script>
 
 </body>
