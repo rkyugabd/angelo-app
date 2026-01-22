@@ -2,30 +2,55 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Owner Panel</title>
+  <title>Owner Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: Arial; padding: 20px; }
-    a { display: block; margin-bottom: 20px; }
+    .card {
+      background: #f2f2f2;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    a {
+      display: block;
+      margin-top: 6px;
+      text-decoration: none;
+      color: #000;
+    }
   </style>
 </head>
+
 <body>
 
-<a href="index.html">← Back</a>
+<a href="index.html">← Back to App</a>
 
-<h2>🔒 Owner Panel</h2>
+<h2>👑 Owner Dashboard</h2>
 
-<p>
-Private access for owner only.
-</p>
+<div class="card">
+  <div class="title">📊 Daily Operations</div>
+  <p>Staff fill daily records directly on iPad.</p>
+  <a href="daily.html">View Daily Records</a>
+</div>
 
-<p>
-• Business overview<br>
-• Reports & analysis<br>
-• AI insights
-</p>
+<div class="card">
+  <div class="title">⏱ Time Saving</div>
+  <p>Eliminate paper forms and manual data entry.</p>
+</div>
 
-<p><b>Password protection will be added.</b></p>
+<div class="card">
+  <div class="title">📈 Future Analytics</div>
+  <p>Data can be analyzed automatically (AI-ready).</p>
+</div>
+
+<div class="card">
+  <div class="title">🤖 AI (Coming Soon)</div>
+  <p>Ingredient usage, waste analysis, staff performance.</p>
+</div>
 
 </body>
 </html>
