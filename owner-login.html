@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Owner Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      padding: 30px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>👑 Owner Login</h2>
+<p>Enter password to continue</p>
+
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<div class="error" id="error"></div>
+
+<script>
+function login() {
+  const pwd = document.getElementById("password").value;
+  if (pwd === "1234") {
+    window.location.href = "owner.html";
+  } else {
+    document.getElementById("error").innerText = "Wrong password";
+  }
+}
+</script>
+
+</body>
+</html>
