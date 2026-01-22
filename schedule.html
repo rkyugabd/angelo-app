@@ -5,13 +5,21 @@
   <title>Staff Schedule</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial;
-      padding: 20px;
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #f2f2f2; }
+    h3 { margin-top: 30px; }
+    input {
+      width: 100%;
+      border: none;
+      text-align: center;
     }
-    a {
-      display: block;
-      margin-bottom: 20px;
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -20,24 +28,45 @@
 
 <a href="index.html">← Back</a>
 
-<h2>📅 Staff Schedule</h2>
+<h2>📅 Staff Schedule (Weekly)</h2>
 
-<p>
-Weekly shift schedule (view only).
-</p>
+<h3>🍳 Kitchen</h3>
 
-<p>
-• Kitchen<br>
-• Baking<br>
-• Service
-</p>
+<table>
+  <tr>
+    <th>Staff</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+    <th>Sun</th>
+  </tr>
 
-<p>
-Staff can check their shifts here.<br>
-No editing access.
-</p>
+  <tr>
+    <td>A</td>
+    <td><input></td><td><input></td><td><input></td>
+    <td><input></td><td><input></td><td><input></td><td><input></td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td><input></td><td><input></td><td><input></td>
+    <td><input></td><td><input></td><td><input></td><td><input></td>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td><input></td><td><input></td><td><input></td>
+    <td><input></td><td><input></td><td><input></td><td><input></td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td><input></td><td><input></td><td><input></td>
+    <td><input></td><td><input></td><td><input></td><td><input></td>
+  </tr>
+</table>
 
-<p><b>Schedule will be published weekly.</b></p>
+<button onclick="alert('Saved (demo)')">Save</button>
 
 </body>
 </html>
