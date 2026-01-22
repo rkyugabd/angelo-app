@@ -9,6 +9,11 @@
       font-family: Arial, sans-serif;
       padding: 20px;
     }
+    .back {
+      display: block;
+      margin-bottom: 15px;
+      text-decoration: none;
+    }
     .card {
       display: block;
       padding: 15px;
@@ -22,29 +27,40 @@
     .card:hover {
       background: #e0e0e0;
     }
+    iframe {
+      margin-top: 20px;
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
   </style>
 </head>
 
 <body>
 
-<a href="index.html">← Back</a>
+<a class="back" href="index.html">← Back</a>
 
 <h2>📝 Daily Records</h2>
 <p>Select a form to fill in:</p>
 
+<!-- Web-embedded form -->
+<h3>📄 Ingredients Usage (Fill here)</h3>
+
+<iframe
+  src="https://docs.google.com/spreadsheets/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/edit#gid=0">
+</iframe>
+
+<hr>
+
+<!-- External links -->
 <a class="card" target="_blank"
-   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/htmlview#gid=0">
-📄 Ingredients Usage
+   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/edit#gid=1050399207">
+📄 Daily Production (Open Sheet)
 </a>
 
 <a class="card" target="_blank"
-   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/htmlview#gid=1050399207">
-📄 Daily Production
-</a>
-
-<a class="card" target="_blank"
-   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/htmlview#gid=731294102">
-📄 Transfers
+   href="https://docs.google.com/spreadsheets/u/0/d/1-DF5VjbzzXYO0npBxvquhlwud8zrUvpbKq0jFBZeDZ8/edit#gid=731294102">
+📄 Transfers (Open Sheet)
 </a>
 
 </body>
