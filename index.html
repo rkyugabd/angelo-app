@@ -5,53 +5,156 @@
   <title>Angelo Restaurant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- App Icon -->
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="icon" href="icon.png">
+  <!-- iOS App style -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
       margin: 0;
-      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, Arial;
+      background: #f4f4f4;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    a.card {
-      display: block;
-      background: white;
+
+    header {
+      background: #111;
+      color: white;
       padding: 18px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      font-size: 18px;
-      color: black;
-      text-decoration: none;
+      text-align: center;
     }
-    a.card:active {
-      background: #e0e0e0;
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: black;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    .login {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .login .card {
+      background: #222;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin: 20px 0;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>🍝 Angelo Restaurant</h1>
+<header>
+  <h1>🍝 Angelo</h1>
+  <p>Internal Operations System</p>
+</header>
 
- <a href="daily.html" class="card">📝 Daily Records</a>
-<a href="menu.html" class="card">📘 Menu & Recipes</a>
-<a href="delivery.html" class="card">🛵 Delivery Orders</a>
-<a href="schedule.html" class="card">📅 Staff Schedule</a>
-<a href="training.html" class="card">🎓 Staff Training</a>
-<a href="ai.html" class="card">🤖 AI Q&A</a>
+<div class="container">
 
-<a class="card" href="owner-login.html">
-👑 Owner Login
-</a>
+  <div class="grid">
+    <a class="card" href="daily.html">
+      <div class="icon">📝</div>
+      <div class="title">Daily Records</div>
+      <div class="subtitle">Staff daily input</div>
+    </a>
 
-  <a href="finance.html" class="card">💰 Finance Login</a>
+    <a class="card" href="menu.html">
+      <div class="icon">📘</div>
+      <div class="title">Menu & Recipes</div>
+      <div class="subtitle">View only</div>
+    </a>
+
+    <a class="card" href="delivery.html">
+      <div class="icon">🛵</div>
+      <div class="title">Delivery Orders</div>
+      <div class="subtitle">Order status</div>
+    </a>
+
+    <a class="card" href="training.html">
+      <div class="icon">🎓</div>
+      <div class="title">Staff Training</div>
+      <div class="subtitle">Guidelines & notes</div>
+    </a>
+
+    <a class="card" href="ai.html">
+      <div class="icon">🤖</div>
+      <div class="title">AI Q&A</div>
+      <div class="subtitle">Ask work questions</div>
+    </a>
+
+    <a class="card" href="schedule.html">
+      <div class="icon">📅</div>
+      <div class="title">Staff Schedule</div>
+      <div class="subtitle">Weekly shifts</div>
+    </a>
+  </div>
+
+  <div class="login">
+    <a class="card" href="owner-login.html">
+      <div class="icon">👑</div>
+      <div class="title">Owner Login</div>
+    </a>
+
+    <a class="card" href="finance-login.html">
+      <div class="icon">💰</div>
+      <div class="title">Finance Login</div>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  Anglo Restaurant • Demo Version
+</footer>
 
 </body>
 </html>
